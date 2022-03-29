@@ -1,6 +1,7 @@
 import React from "react";
 import "./TodoItem.css";
 const TodoItem = (props) => {
+ 
   return (
     <section>
       <li className="TodoItem">
@@ -8,6 +9,7 @@ const TodoItem = (props) => {
           className={`Icon Icon-check ${
             props.completed && "Icon-check--active"
           }`}
+          onClick={props.onComplete}
         >
           √
         </span>
@@ -16,7 +18,11 @@ const TodoItem = (props) => {
         >
           {props.text}
         </p>
-        <span className="Icon Icon-delete">X</span>
+        <span 
+        className="Icon Icon-delete" 
+        onClick={props.onDelete}
+        >X
+        </span>
       </li>
     </section>
   );
